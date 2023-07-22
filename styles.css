@@ -105,4 +105,7 @@ p{
     color:white;
 }
 
-
+.footer{
+    margin-top: 200px;
+    font: 900 20px "Courier New";
+}

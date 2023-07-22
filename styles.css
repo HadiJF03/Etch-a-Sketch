@@ -69,8 +69,11 @@ p{
 .rainbow{
     border-radius: 10px;
     border-width: 0;
-    font: 900 15px "Courier New";
+    font: 900 20px "Courier New";
     padding: 5px 20px;
+    background-color: rgb(88, 177, 177);
+    color:white;
+    width: 190px;
 }
 
 .slider{
@@ -93,7 +96,11 @@ p{
 .reset{
     border-radius: 10px;
     border-width: 0;
+    padding: 5px 20px;
     width:190px;
     font: 900 20px "Courier New";
+    background-color: rgb(88, 177, 177);
+    color:white;
 }
+
 

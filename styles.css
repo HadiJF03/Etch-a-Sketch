@@ -75,7 +75,9 @@ p{
     color:white;
     width: 190px;
 }
-
+.slider-container{
+    text-align: center;
+}
 .slider{
     -webkit-appearance: none;
     border-radius: 20px;

@@ -5,7 +5,7 @@ function gridCreator(gridCount, parent){
         div.classList.add("grid");
        
         div.style.width = `${canvas.offsetWidth/gridCount}px`;
-        div.style.height = `${canvas.offserheight/gridCount}px`;
+        div.style.height = `${canvas.offsetHeight/gridCount}px`;
         parent.append(div);
     }
 }
@@ -14,28 +14,37 @@ function toggleRainbow(){
     if(rainbows) rainbows = false;
     else rainbows= true;
 }
-
+function addListener(){
+    const divs = document.querySelectorAll(".grid")
+    divs.forEach(div => div.addEventListener("mouseover",changeColor));
+}
 function changeColor(){
     if(!rainbows) this.style.background =color;
     else{
     const randomColors = "#" + (Math.floor(Math.random()*16777215).toString(16));
     this.style.background = randomColors;
     }
-    function randomColor(){
-        l
-        this.style.background = randomColors;
-    }
 }
 
 function resetCanvas(){
-    divs.forEach(div=> div.style.background = "white");
+    canvas.innerHTML = '';
+    gridCreator(slider.value,canvas);
+    addListener();
 }
-const canvas = document.querySelector(".canvas");
-gridCreator(16,canvas);
+const slider = document.querySelector(".slider");
+const dimensions = document.querySelector(".dimensions")
+slider.defaultValue = 16;
 
-const divs = document.querySelectorAll(".grid")
-divs.forEach(div => div.addEventListener("mouseover",changeColor));
-   
+dimensions.textContent = `${slider.value} X ${slider.value}`;
+const canvas = document.querySelector(".canvas");
+gridCreator(slider.value,canvas);
+addListener();
+
+slider.oninput = function(){
+    resetCanvas();
+    dimensions.innerHTML = `${slider.value} X ${slider.value}` ;
+}
+
 
 let color = "red";
 const cButtons = document.querySelectorAll(".color-button");
